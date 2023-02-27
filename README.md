@@ -31,7 +31,7 @@ iex ((New-Object System.Net.WebClient).DownloadString($url))
 
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/I34ov1aSB8cYAIZM24wMWkvvJbiPa03yC3o2DWJ2Ifi9MbvmvESFS2aRqwZN.jpg)
 
-![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/GIn4wxaEIbJAqA8Es37BznETPXqxVYGsJLgl33fbizfAS7IIlqYGv40lfqT7.jpg)
+![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/W19INORB5n0D6jo187PTnf68uJrd9p1oujrRxUnSOkVFIu2Ls2fdHnMEUgl6.jpg)
 
 
 ➡️Please inspect [https://github.com/bonben365/office-downloader/raw/main/install.ps1](https://github.com/bonben365/office-downloader/raw/main/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of any script from the internet you are not familiar with.
