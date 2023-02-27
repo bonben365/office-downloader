@@ -29,7 +29,7 @@ iex ((New-Object System.Net.WebClient).DownloadString($url))
 
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/qIm1mfJXe3wegyDESXjlgqi0NGNPXWAXCDJ7EnKYy4Ubl0jlPsW68bslaMRc.jpg)
 
-![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/agh5oBcBCVV6DsPFfpruDw9xVe1s9XERB8Aah8FyXMwV3wOPoggBumluNv8i.jpg)
+![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/I34ov1aSB8cYAIZM24wMWkvvJbiPa03yC3o2DWJ2Ifi9MbvmvESFS2aRqwZN.jpg)
 
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/GIn4wxaEIbJAqA8Es37BznETPXqxVYGsJLgl33fbizfAS7IIlqYGv40lfqT7.jpg)
 
