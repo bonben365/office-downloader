@@ -33,6 +33,7 @@ iex ((New-Object System.Net.WebClient).DownloadString($url))
 
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/I34ov1aSB8cYAIZM24wMWkvvJbiPa03yC3o2DWJ2Ifi9MbvmvESFS2aRqwZN.jpg)
 
+Once done, open the Install.bat file to install the app
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/W19INORB5n0D6jo187PTnf68uJrd9p1oujrRxUnSOkVFIu2Ls2fdHnMEUgl6.jpg)
 
 
