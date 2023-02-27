@@ -25,9 +25,9 @@ iex ((New-Object System.Net.WebClient).DownloadString($url))
 
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/1kS8cN8UCYWJehVWVk4u9mNAtro6sxW2aDujiCyj0dHswzgqhYcSiZsKR6Ux.jpg)
 
-![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/0yT8HLnXndXYfmvoj6muqTInPsXLPQxeOV3F0rBIqzts78TNzhk6Khs9qn9r.jpg)
+![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/cfZNfBvuh0enEbmONCRSW1H2HHukqjjj6x0BYDI1pKSEHNQ1jUIwCU8GrqcO.jpg)
 
-![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/hAq2xKauQHsY7wAcLJ72IsiwQ4a24wtjd2JEhIeyX3MkiLxE1cbdNd9BurTf.jpg)
+![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/qIm1mfJXe3wegyDESXjlgqi0NGNPXWAXCDJ7EnKYy4Ubl0jlPsW68bslaMRc.jpg)
 
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/agh5oBcBCVV6DsPFfpruDw9xVe1s9XERB8Aah8FyXMwV3wOPoggBumluNv8i.jpg)
 
