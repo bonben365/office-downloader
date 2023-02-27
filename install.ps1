@@ -120,7 +120,7 @@ $Menu = {
    
       Write-Host
       Write-Host *****************************************************************************
-      Write-Host "- Downloading $productName $($arch) bit...."
+      Write-Host "- Downloading $productName $($arch) bit...."                               
       Write-Host "- Once done, it will go back to the menu automatically. Please be patient!"
       Write-Host *****************************************************************************
       Write-Host
@@ -135,7 +135,7 @@ $Menu = {
    $select = Read-Host
    
    if ($select -eq 1) {$arch = '64'}
-   if ($select -eq 2) {$arch = '86'}
+   if ($select -eq 2) {$arch = '32'}
    
    #Menu level 1 
    Switch ($select)
