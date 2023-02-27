@@ -58,13 +58,14 @@ $Menu = {
    # Download the Office Deployment Tool
    $uri = 'https://github.com/bonben365/office365-installer/raw/main/setup.exe'
    $null = Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
-   .\setup.exe /download "configuration-x$arch.xml"
-   
+
    Write-Host
    Write-Host ***************************************************************
    Write-Host "Downloading $productName $($arch) bit...."                    *
    Write-Host ***************************************************************
    Write-Host
+
+   .\setup.exe /download "configuration-x$arch.xml"
    
    }
    
