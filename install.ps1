@@ -51,7 +51,7 @@ $Menu = {
    
    
    $download = {
-      $null = New-Item -Path "~\Desktop\Office$version" -ItemType Directory -Force
+      $null = New-Item -Path "~\Desktop\$productName" -ItemType Directory -Force
       Set-Location "~\Desktop\Office$version"
       $fileName = "configuration-x$arch.xml"
       $null = New-Item $fileName -ItemType File -Force
@@ -73,16 +73,17 @@ $Menu = {
       $null = Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
 
       Write-Host
-      Write-Host ***************************************************************
-      Write-Host "Downloading $productName $($arch) bit...."
-      Write-Host ***************************************************************
+      Write-Host *****************************************************************************
+      Write-Host "- Downloading $productName $($arch) bit...."
+      Write-Host "- Once done, it will go back to the menu automatically. Please be patient!"
+      Write-Host *****************************************************************************
       Write-Host
 
       .\setup.exe /download "configuration-x$arch.xml" 
    }
 
    $download365 = {
-      $null = New-Item -Path "~\Desktop\Office$version" -ItemType Directory -Force
+      $null = New-Item -Path "~\Desktop\$productName" -ItemType Directory -Force
       Set-Location "~\Desktop\Office$version"
       $fileName = "configuration-x$arch.xml"
       $null = New-Item $fileName -ItemType File -Force
@@ -104,9 +105,10 @@ $Menu = {
       $null = Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
    
       Write-Host
-      Write-Host ***************************************************************
-      Write-Host "Downloading $productName $($arch) bit...."
-      Write-Host ***************************************************************
+      Write-Host *****************************************************************************
+      Write-Host "- Downloading $productName $($arch) bit...."
+      Write-Host "- Once done, it will go back to the menu automatically. Please be patient!"
+      Write-Host *****************************************************************************
       Write-Host
    
       .\setup.exe /download "configuration-x$arch.xml" 
