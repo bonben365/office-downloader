@@ -52,7 +52,7 @@ $Menu = {
    
    $download = {
       $null = New-Item -Path "~\Desktop\$productName" -ItemType Directory -Force
-      Set-Location "~\Desktop\Office$version"
+      Set-Location "~\Desktop\Office$productName"
       $fileName = "configuration-x$arch.xml"
       $null = New-Item $fileName -ItemType File -Force
       Add-Content $fileName -Value '<Configuration>'
@@ -84,7 +84,7 @@ $Menu = {
 
    $download365 = {
       $null = New-Item -Path "~\Desktop\$productName" -ItemType Directory -Force
-      Set-Location "~\Desktop\Office$version"
+      Set-Location "~\Desktop\Office$productName"
       $fileName = "configuration-x$arch.xml"
       $null = New-Item $fileName -ItemType File -Force
       Add-Content $fileName -Value '<Configuration>'
