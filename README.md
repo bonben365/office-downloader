@@ -20,8 +20,8 @@ In Windows 11, select Terminal Admin instead of Windows PowerShell Admin.
 Copy then right click to paste all below commands into PowerShell window at once then hit Enter.
 
 ```ps
-$url='https://github.com/bonben365/office-downloader/raw/main/install.ps1'
 Set-ExecutionPolicy Bypass -Scope Process -Force
+$url='https://github.com/bonben365/office-downloader/raw/main/install.ps1'
 iex ((New-Object System.Net.WebClient).DownloadString($url))
 ```
 
