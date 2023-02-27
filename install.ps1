@@ -36,9 +36,19 @@ $Menu = {
       Write-Host " *                  Menu                   *" 
       Write-Host " *******************************************" 
       Write-Host 
-      Write-Host " 1. Office $version Professional Plus" 
-      Write-Host " 2. Office $version Standard" 
-      Write-Host " 3. Quit"
+      Write-Host " 1.  Office $version Professional Plus" 
+      Write-Host " 2.  Office $version Standard"
+      Write-Host " 3.  Project Professional $version" 
+      Write-Host " 4.  Project Standard $version" 
+      Write-Host " 5.  Visio Professional $version" 
+      Write-Host " 6.  Visio Standard $version" 
+      Write-Host " 7.  Word $version" 
+      Write-Host " 8.  Excel $version" 
+      Write-Host " 9.  PowerPoint $version" 
+      Write-Host " 10. Outlook $version" 
+      Write-Host " 11. Publisher $version" 
+      Write-Host " 12. Access $version" 
+      Write-Host " 13. Go Back"
       Write-Host 
       Write-Host " Select an option and press Enter: "  -nonewline
    }
@@ -140,19 +150,150 @@ $Menu = {
    #Menu level 1 
    Switch ($select)
        {
-       # Download Office 64 bit.   
-       1 {
+         # Download Office 64-bit.   
+         1 {
+               cls
+      
+               Do { 
+               cls
+               Invoke-Command $Menu1
+               $select1 = Read-Host
+      
+               if ($select1 -eq 1) {$version = '2019'}
+               if ($select1 -eq 2) {$version = '2021'}
+               if ($select1 -eq 3) {$version = '365'}
+      
+               #Menu level 2
+               Switch ($select1)
+                  {
+                     #Download Microsoft Office 2019
+                     1 {
+                        Do { 
+                        cls
+                        Invoke-Command $Menu2
+                        $select2 = Read-Host
+      
+                        if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus"}
+                        if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard"}
+                        if ($select2 -eq 3) {$productId = "ProjectPro$($version)Volume";$productName = "Project $version Pro"}
+                        if ($select2 -eq 4) {$productId = "ProjectStd$($version)Volume";$productName = "Project $version Standard"}
+                        if ($select2 -eq 5) {$productId = "VisioPro$($version)Volume";$productName = "Visio $version Pro"}
+                        if ($select2 -eq 6) {$productId = "VisioStd$($version)Volume";$productName = "Visio $version Standard"}
+                        if ($select2 -eq 7) {$productId = "Word$($version)Volume";$productName = "Word $version"}
+                        if ($select2 -eq 8) {$productId = "Excel$($version)Volume";$productName = "Excel $version"}
+                        if ($select2 -eq 9) {$productId = "PowerPoint$($version)Volume";$productName = "PowerPoint $version"}
+                        if ($select2 -eq 10) {$productId = "Outlook$($version)Volume";$productName = "Outlook $version"}
+                        if ($select2 -eq 11) {$productId = "Publisher$($version)Volume";$productName = "Publisher $version"}
+                        if ($select2 -eq 12) {$productId = "Access$($version)Volume";$productName = "Access $version"}
+      
+                        Switch ($select2)
+                           {
+                           1 {Invoke-Command $download}
+                           2 {Invoke-Command $download}
+                           3 {Invoke-Command $download}
+                           4 {Invoke-Command $download}
+                           5 {Invoke-Command $download}
+                           6 {Invoke-Command $download}
+                           7 {Invoke-Command $download}
+                           8 {Invoke-Command $download}
+                           9 {Invoke-Command $download}
+                           10 {Invoke-Command $download}
+                           11 {Invoke-Command $download}
+                           12 {Invoke-Command $download}
+      
+                           }
+                        }
+      
+                        While ($select -ne 13)
+                     }
+      
+                     #Download Microsoft Office 2021
+                     2 {
+                        Do { 
+                        cls
+                        Invoke-Command $Menu2
+                        $select2 = Read-Host
+      
+                        if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus LTSC"}
+                        if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard LTSC"}
+                        if ($select2 -eq 3) {$productId = "ProjectPro$($version)Volume";$productName = "Project $version Pro LTSC"}
+                        if ($select2 -eq 4) {$productId = "ProjectStd$($version)Volume";$productName = "Project $version Standard LTSC"}
+                        if ($select2 -eq 5) {$productId = "VisioPro$($version)Volume";$productName = "Visio $version Pro LTSC"}
+                        if ($select2 -eq 6) {$productId = "VisioStd$($version)Volume";$productName = "Visio $version Standard LTSC"}
+                        if ($select2 -eq 7) {$productId = "Word$($version)Volume";$productName = "Word $version LTSC"}
+                        if ($select2 -eq 8) {$productId = "Excel$($version)Volume";$productName = "Excel $version LTSC"}
+                        if ($select2 -eq 9) {$productId = "PowerPoint$($version)Volume";$productName = "PowerPoint $version LTSC"}
+                        if ($select2 -eq 10) {$productId = "Outlook$($version)Volume";$productName = "Outlook $version LTSC"}
+                        if ($select2 -eq 11) {$productId = "Publisher$($version)Volume";$productName = "Publisher $version LTSC"}
+                        if ($select2 -eq 12) {$productId = "Access$($version)Volume";$productName = "Access $version LTSC"}
+      
+                        Switch ($select2)
+                           {
+                              1 {Invoke-Command $download}
+                              2 {Invoke-Command $download}
+                              3 {Invoke-Command $download}
+                              4 {Invoke-Command $download}
+                              5 {Invoke-Command $download}
+                              6 {Invoke-Command $download}
+                              7 {Invoke-Command $download}
+                              8 {Invoke-Command $download}
+                              9 {Invoke-Command $download}
+                              10 {Invoke-Command $download}
+                              11 {Invoke-Command $download}
+                              12 {Invoke-Command $download}
+      
+                           }
+                        }
+      
+                        While ($select -ne 13)
+                     }
+      
+                     #Download Microsoft Office 365
+                     3 {
+                        Do { 
+                        cls
+                        Invoke-Command $Menu365
+                        $select2 = Read-Host
+      
+                        if ($select2 -eq 1) {$productId = "O365HomePremRetail";$productName = "Microsoft $version Home & Personal"}
+                        if ($select2 -eq 2) {$productId = "O365BusinessRetail";$productName = "Microsoft $version Apps for Business"}
+                        if ($select2 -eq 3) {$productId = "O365ProPlusRetail";$productName = "Microsoft $version Apps for Enterprise"}
+      
+                        Switch ($select2)
+                           {
+                           1 {Invoke-Command $download365}
+                           2 {Invoke-Command $download365}
+                           3 {Invoke-Command $download365}
+      
+                           }
+                        }
+      
+                        While ($select -ne 4)
+                     }
+
+
+      
+                  }
+               }
+      
+               While ($select1 -ne 4)
+      
+               }
+
+
+         # Download Office 32-bit.   
+         2 {
             cls
-   
+
             Do { 
             cls
             Invoke-Command $Menu1
             $select1 = Read-Host
-   
+
             if ($select1 -eq 1) {$version = '2019'}
             if ($select1 -eq 2) {$version = '2021'}
             if ($select1 -eq 3) {$version = '365'}
-   
+
             #Menu level 2
             Switch ($select1)
                {
@@ -162,165 +303,113 @@ $Menu = {
                      cls
                      Invoke-Command $Menu2
                      $select2 = Read-Host
-   
+
                      if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus"}
                      if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard"}
-   
+                     if ($select2 -eq 3) {$productId = "ProjectPro$($version)Volume";$productName = "Project $version Pro"}
+                     if ($select2 -eq 4) {$productId = "ProjectStd$($version)Volume";$productName = "Project $version Standard"}
+                     if ($select2 -eq 5) {$productId = "VisioPro$($version)Volume";$productName = "Visio $version Pro"}
+                     if ($select2 -eq 6) {$productId = "VisioStd$($version)Volume";$productName = "Visio $version Standard"}
+                     if ($select2 -eq 7) {$productId = "Word$($version)Volume";$productName = "Word $version"}
+                     if ($select2 -eq 8) {$productId = "Excel$($version)Volume";$productName = "Excel $version"}
+                     if ($select2 -eq 9) {$productId = "PowerPoint$($version)Volume";$productName = "PowerPoint $version"}
+                     if ($select2 -eq 10) {$productId = "Outlook$($version)Volume";$productName = "Outlook $version"}
+                     if ($select2 -eq 11) {$productId = "Publisher$($version)Volume";$productName = "Publisher $version"}
+                     if ($select2 -eq 12) {$productId = "Access$($version)Volume";$productName = "Access $version"}
+
                      Switch ($select2)
                         {
                         1 {Invoke-Command $download}
                         2 {Invoke-Command $download}
-    
+                        3 {Invoke-Command $download}
+                        4 {Invoke-Command $download}
+                        5 {Invoke-Command $download}
+                        6 {Invoke-Command $download}
+                        7 {Invoke-Command $download}
+                        8 {Invoke-Command $download}
+                        9 {Invoke-Command $download}
+                        10 {Invoke-Command $download}
+                        11 {Invoke-Command $download}
+                        12 {Invoke-Command $download}
+   
                         }
                      }
-   
-                     While ($select -ne 3)
+
+                     While ($select -ne 13)
                   }
-   
+
                   #Download Microsoft Office 2021
                   2 {
                      Do { 
                      cls
                      Invoke-Command $Menu2
                      $select2 = Read-Host
-   
+
                      if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus LTSC"}
                      if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard LTSC"}
-   
+                     if ($select2 -eq 3) {$productId = "ProjectPro$($version)Volume";$productName = "Project $version Pro LTSC"}
+                     if ($select2 -eq 4) {$productId = "ProjectStd$($version)Volume";$productName = "Project $version Standard LTSC"}
+                     if ($select2 -eq 5) {$productId = "VisioPro$($version)Volume";$productName = "Visio $version Pro LTSC"}
+                     if ($select2 -eq 6) {$productId = "VisioStd$($version)Volume";$productName = "Visio $version Standard LTSC"}
+                     if ($select2 -eq 7) {$productId = "Word$($version)Volume";$productName = "Word $version LTSC"}
+                     if ($select2 -eq 8) {$productId = "Excel$($version)Volume";$productName = "Excel $version LTSC"}
+                     if ($select2 -eq 9) {$productId = "PowerPoint$($version)Volume";$productName = "PowerPoint $version LTSC"}
+                     if ($select2 -eq 10) {$productId = "Outlook$($version)Volume";$productName = "Outlook $version LTSC"}
+                     if ($select2 -eq 11) {$productId = "Publisher$($version)Volume";$productName = "Publisher $version LTSC"}
+                     if ($select2 -eq 12) {$productId = "Access$($version)Volume";$productName = "Access $version LTSC"}
+
                      Switch ($select2)
                         {
-                        1 {Invoke-Command $download}
-                        2 {Invoke-Command $download}
-    
+                           1 {Invoke-Command $download}
+                           2 {Invoke-Command $download}
+                           3 {Invoke-Command $download}
+                           4 {Invoke-Command $download}
+                           5 {Invoke-Command $download}
+                           6 {Invoke-Command $download}
+                           7 {Invoke-Command $download}
+                           8 {Invoke-Command $download}
+                           9 {Invoke-Command $download}
+                           10 {Invoke-Command $download}
+                           11 {Invoke-Command $download}
+                           12 {Invoke-Command $download}
+   
                         }
                      }
-   
-                     While ($select -ne 3)
+
+                     While ($select -ne 13)
                   }
-   
+
                   #Download Microsoft Office 365
                   3 {
                      Do { 
                      cls
                      Invoke-Command $Menu365
                      $select2 = Read-Host
-   
+
                      if ($select2 -eq 1) {$productId = "O365HomePremRetail";$productName = "Microsoft $version Home & Personal"}
                      if ($select2 -eq 2) {$productId = "O365BusinessRetail";$productName = "Microsoft $version Apps for Business"}
                      if ($select2 -eq 3) {$productId = "O365ProPlusRetail";$productName = "Microsoft $version Apps for Enterprise"}
-   
+
                      Switch ($select2)
                         {
                         1 {Invoke-Command $download365}
                         2 {Invoke-Command $download365}
                         3 {Invoke-Command $download365}
-    
+   
                         }
                      }
-   
+
                      While ($select -ne 4)
                   }
 
 
-   
+
                }
             }
-   
+
             While ($select1 -ne 4)
-   
-            }
-
-
-       # Download Office 32 bit.   
-       2 {
-         cls
-
-         Do { 
-         cls
-         Invoke-Command $Menu1
-         $select1 = Read-Host
-
-         if ($select1 -eq 1) {$version = '2019'}
-         if ($select1 -eq 2) {$version = '2021'}
-         if ($select1 -eq 3) {$version = '365'}
-
-         #Menu level 2
-         Switch ($select1)
-            {
-               #Download Microsoft Office 2019
-               1 {
-                  Do { 
-                  cls
-                  Invoke-Command $Menu2
-                  $select2 = Read-Host
-
-                  if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus"}
-                  if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard"}
-
-                  Switch ($select2)
-                     {
-                     1 {Invoke-Command $download}
-                     2 {Invoke-Command $download}
- 
-                     }
-                  }
-
-                  While ($select -ne 3)
-               }
-
-               #Download Microsoft Office 2021
-               2 {
-                  Do { 
-                  cls
-                  Invoke-Command $Menu2
-                  $select2 = Read-Host
-
-                  if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus LTSC"}
-                  if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard LTSC"}
-
-                  Switch ($select2)
-                     {
-                     1 {Invoke-Command $download}
-                     2 {Invoke-Command $download}
- 
-                     }
-                  }
-
-                  While ($select -ne 3)
-               }
-
-               #Download Microsoft Office 365
-               3 {
-                  Do { 
-                  cls
-                  Invoke-Command $Menu365
-                  $select2 = Read-Host
-
-                  if ($select2 -eq 1) {$productId = "O365HomePremRetail";$productName = "Microsoft $version Home & Personal"}
-                  if ($select2 -eq 2) {$productId = "O365BusinessRetail";$productName = "Microsoft $version Apps for Business"}
-                  if ($select2 -eq 3) {$productId = "O365ProPlusRetail";$productName = "Microsoft $version Apps for Enterprise"}
-
-                  Switch ($select2)
-                     {
-                     1 {Invoke-Command $download365}
-                     2 {Invoke-Command $download365}
-                     3 {Invoke-Command $download365}
- 
-                     }
-                  }
-
-                  While ($select -ne 4)
-               }
-
-
 
             }
-         }
-
-         While ($select1 -ne 4)
-
-         }
-
 
 
        }
