@@ -3,8 +3,10 @@
 
 ## Information
 - All downloaded files are saved in your Desktop.
-- Do not turn off or disconnect from internet
+- Do not turn off or disconnected from the internet.
 - You can download 32 or 64 bit version of Office as you need.
+- The script support download Office 2019, Office 2021 and Microsoft 365 Apps (Home, Business and Enterprise)
+- Download single app such as Word, Excel, PowerPoint... is supported also.
 - Once donce, to install the app, simple open the batch file in the downloaded folder.
 
   
