@@ -6,48 +6,62 @@ $Menu = {
    Write-Host " 1. Download Office 64-bit" 
    Write-Host " 2. Download Office 32-bit"
    Write-Host " 3. Quit"
+   Write-Host
+   Write-Host
+   Write-Host " Information:"
    Write-Host 
+   Write-Host "  - Office 32-bit can run on both Windows 10 32 and 64-bit."
+   Write-Host "  - Office 64-bit can run on Windows 10 64-bit only."
+   Write-Host "  - Nowadays, almost computers run Windows 64-bit."
+   Write-Host
    Write-Host " Select an option and press Enter: "  -nonewline
    }
    cls
    
    $Menu1 = {
-   Write-Host " *******************************************"
-   Write-Host " *                  Menu                   *" 
-   Write-Host " *******************************************" 
-   Write-Host 
-   Write-Host " 1. Microsoft Office 2019" 
-   Write-Host " 2. Microsoft Office 2021" 
-   Write-Host " 3. Microsoft Office 365" 
-   Write-Host " 4. Quit"
-   Write-Host 
-   Write-Host " Select an option and press Enter: "  -nonewline
-   }
-   
-   $Menu2 = {
-   Write-Host " *******************************************"
-   Write-Host " *                  Menu                   *" 
-   Write-Host " *******************************************" 
-   Write-Host 
-   Write-Host " 1. Office $version Professional Plus" 
-   Write-Host " 2. Office $version Standard" 
-   Write-Host " 3. Quit"
-   Write-Host 
-   Write-Host " Select an option and press Enter: "  -nonewline
-   }
-
-   $Menu365 = {
       Write-Host " *******************************************"
       Write-Host " *                  Menu                   *" 
       Write-Host " *******************************************" 
       Write-Host 
-      Write-Host " 1. Office $version Home and Personal"
-      Write-Host " 2. Office $version App for Business"
-      Write-Host " 3. Microsoft $version Apps for Enterprise"
+      Write-Host " 1. Microsoft Office 2019" 
+      Write-Host " 2. Microsoft Office 2021" 
+      Write-Host " 3. Microsoft Office 365" 
       Write-Host " 4. Quit"
       Write-Host 
       Write-Host " Select an option and press Enter: "  -nonewline
-      }
+   }
+   
+   $Menu2 = {
+      Write-Host " *******************************************"
+      Write-Host " *                  Menu                   *" 
+      Write-Host " *******************************************" 
+      Write-Host 
+      Write-Host " 1. Office $version Professional Plus" 
+      Write-Host " 2. Office $version Standard" 
+      Write-Host " 3. Quit"
+      Write-Host 
+      Write-Host " Select an option and press Enter: "  -nonewline
+   }
+
+   $Menu365 = {
+      Write-Host " ********************************************"
+      Write-Host " *                  Menu                    *" 
+      Write-Host " ********************************************" 
+      Write-Host 
+      Write-Host " 1. Office $version Home and Personal"   
+      Write-Host " 2. Office $version App for Business"
+      Write-Host " 3. Microsoft $version Apps for Enterprise"
+      Write-Host " 4. Quit"
+      Write-Host
+      Write-Host
+      Write-Host " Information:"
+      Write-Host 
+      Write-Host "  - Office 365 Home and Personal using the same package."
+      Write-Host "  - Microsoft 365 Apps for Business known as Office 365 Business ."
+      Write-Host "  - Microsoft 365 Apps for Enterprise knows as Office 365 ProPlus."
+      Write-Host
+      Write-Host " Select an option and press Enter: "  -nonewline
+   }
    
    
    $download = {
