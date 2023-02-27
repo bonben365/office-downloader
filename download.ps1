@@ -205,6 +205,7 @@ $Menu = {
                         }
       
                         While ($select -ne 13)
+                        cls
                      }
       
                      #Download Microsoft Office 2021
@@ -246,6 +247,7 @@ $Menu = {
                         }
       
                         While ($select -ne 13)
+                        cls
                      }
       
                      #Download Microsoft Office 365
@@ -277,6 +279,7 @@ $Menu = {
                }
       
                While ($select1 -ne 4)
+               cls
       
                }
 
@@ -336,6 +339,7 @@ $Menu = {
                      }
 
                      While ($select -ne 13)
+                     cls
                   }
 
                   #Download Microsoft Office 2021
@@ -377,6 +381,7 @@ $Menu = {
                      }
 
                      While ($select -ne 13)
+                     cls
                   }
 
                   #Download Microsoft Office 365
@@ -400,6 +405,7 @@ $Menu = {
                      }
 
                      While ($select -ne 4)
+                     cls
                   }
 
 
@@ -408,6 +414,7 @@ $Menu = {
             }
 
             While ($select1 -ne 4)
+            cls
 
             }
 
@@ -416,3 +423,4 @@ $Menu = {
    }
    
    While ($select -ne 3)
+   cls
