@@ -41,7 +41,7 @@ $Menu = {
       Write-Host " *                  Menu                   *" 
       Write-Host " *******************************************" 
       Write-Host 
-      Write-Host " 1. Office $version Home/Personal"
+      Write-Host " 1. Office $version Home and Personal"
       Write-Host " 2. Office $version App for Business"
       Write-Host " 3. Microsoft $version Apps for Enterprise"
       Write-Host " 4. Quit"
@@ -191,7 +191,7 @@ $Menu = {
                      Invoke-Command $Menu365
                      $select2 = Read-Host
    
-                     if ($select2 -eq 1) {$productId = "O365HomePremRetail";$productName = "Microsoft $version Home/Personal"}
+                     if ($select2 -eq 1) {$productId = "O365HomePremRetail";$productName = "Microsoft $version Home & Personal"}
                      if ($select2 -eq 2) {$productId = "O365BusinessRetail";$productName = "Microsoft $version Apps for Business"}
                      if ($select2 -eq 3) {$productId = "O365ProPlusRetail";$productName = "Microsoft $version Apps for Enterprise"}
    
