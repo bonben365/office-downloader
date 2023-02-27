@@ -3,11 +3,11 @@ $Menu = {
    Write-Host " *                  Menu                   *" 
    Write-Host " *******************************************" 
    Write-Host 
-   Write-Host " 1. Download Microsoft Office 64-bit (For Windows 64bit only)" 
-   Write-Host " 2. Download Office 32-bit (For both Windows 32 and 64 bit)"
+   Write-Host " 1. Download Office 64-bit" 
+   Write-Host " 2. Download Office 32-bit"
    Write-Host " 3. Quit"
    Write-Host 
-   Write-Host " select an option and press Enter: "  -nonewline
+   Write-Host " Select an option and press Enter: "  -nonewline
    }
    cls
    
@@ -21,7 +21,7 @@ $Menu = {
    Write-Host " 2. Microsoft Office 365" 
    Write-Host " 3. Quit"
    Write-Host 
-   Write-Host " select an option and press Enter: "  -nonewline
+   Write-Host " Select an option and press Enter: "  -nonewline
    }
    
    $Menu2 = {
@@ -33,7 +33,7 @@ $Menu = {
    Write-Host " 2. Office $version Standard" 
    Write-Host " 3. Quit"
    Write-Host 
-   Write-Host " select an option and press Enter: "  -nonewline
+   Write-Host " Select an option and press Enter: "  -nonewline
    }
    
    
@@ -79,7 +79,8 @@ $Menu = {
    
    #Menu level 1 
    Switch ($select)
-       { 
+       {
+       # Download Office 64 bit.   
        1 {
             cls
    
@@ -143,11 +144,79 @@ $Menu = {
    
             While ($select1 -ne 4)
    
-   
-   
             }
-       2 {}
-       3 {}
+
+
+            # Download Office 32 bit.
+            2 {
+               cls
+      
+               Do { 
+               cls
+               Invoke-Command $Menu1
+               $select1 = Read-Host
+      
+               if ($select1 -eq 1) {$version = '2019'}
+               if ($select1 -eq 2) {$version = '2021'}
+               if ($select1 -eq 3) {$version = '365'}
+      
+               #Menu level 2
+               Switch ($select1)
+                  {
+                     #Download Microsoft Office 2019
+                     1 {
+                        Do { 
+                        cls
+                        Invoke-Command $Menu2
+                        $select2 = Read-Host
+      
+                        if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus"}
+                        if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard"}
+      
+                        Switch ($select2)
+                           {
+                           1 {Invoke-Command $install}
+                           2 {Invoke-Command $install}
+       
+                           }
+                        }
+      
+                        While ($select -ne 3)
+                     }
+      
+                     #Download Microsoft Office 2021
+                     2 {
+                        Do { 
+                        cls
+                        Invoke-Command $Menu2
+                        $select2 = Read-Host
+      
+                        if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus LTSC"}
+                        if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard LTSC"}
+      
+                        Switch ($select2)
+                           {
+                           1 {Invoke-Command $install}
+                           2 {Invoke-Command $install}
+       
+                           }
+                        }
+      
+                        While ($select -ne 3)
+                     }
+      
+      
+                  }
+               }
+      
+               While ($select1 -ne 4)
+      
+      
+      
+               }
+
+
+
        }
    }
    
