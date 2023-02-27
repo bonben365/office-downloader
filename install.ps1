@@ -1,91 +1,160 @@
-$MainMenu = {
-   Write-Host " ******************************************************"
-   Write-Host " * Microsoft Office Installation Script               *" 
-   Write-Host " * Date:    26/02/2023                                *" 
-   Write-Host " * Author:  https://github.com/bonben365              *" 
-   Write-Host " * Website: https://bonben365.com/                    *" 
-   Write-Host " ******************************************************" 
+$Menu = {
+   Write-Host " *******************************************"
+   Write-Host " *                  Menu                   *" 
+   Write-Host " *******************************************" 
    Write-Host 
-   Write-Host " 1. Office 365 / Microsoft 365" 
-   Write-Host " 2. Uninstall All Previous Versions of Microsoft Office"
-   Write-Host " 3. Quit or Press Ctrl + C"
+   Write-Host " 1. Download Office 64-bit" 
+   Write-Host " 2. Download Office 32-bit" 
+   Write-Host " 3. Quit"
    Write-Host 
-   Write-Host " Select an option and press Enter: "  -nonewline
+   Write-Host " select an option and press Enter: "  -nonewline
    }
    cls
+   
+   $Menu1 = {
+   Write-Host " *******************************************"
+   Write-Host " *                  Menu                   *" 
+   Write-Host " *******************************************" 
+   Write-Host 
+   Write-Host " 1. Office 2019" 
+   Write-Host " 2. Office 2021" 
+   Write-Host " 2. Office 365" 
+   Write-Host " 3. Quit"
+   Write-Host 
+   Write-Host " select an option and press Enter: "  -nonewline
+   }
+   
+   $Menu2 = {
+   Write-Host " *******************************************"
+   Write-Host " *                  Menu                   *" 
+   Write-Host " *******************************************" 
+   Write-Host 
+   Write-Host " 1. Office 2019 Professional Plus" 
+   Write-Host " 2. Office 2019 Standard" 
+   Write-Host " 3. Quit"
+   Write-Host 
+   Write-Host " select an option and press Enter: "  -nonewline
+   }
+   
+   
+   $install = {
+   $null = New-Item -Path "~\Desktop\Office$version" -ItemType Directory -Force
+   Set-Location "~\Desktop\Office$version"
+   $fileName = "configuration-x$arch.xml"
+   $null = New-Item $fileName -ItemType File -Force
+   Add-Content $fileName -Value '<Configuration>'
+   Add-content $fileName -Value "<Add OfficeClientEdition=`"$arch`">"
+   Add-content $fileName -Value "<Product ID=`"$productId`">"
+   Add-content $fileName -Value '<Language ID="en-us" />'
+   Add-Content $fileName -Value '</Product>'
+   Add-Content $fileName -Value '</Add>'
+   Add-Content $fileName -Value '</Configuration>'
+   
+   #Create the installation batch files
+   $batchName = "Install-x$arch.bat"
+   $null = New-Item $batchName -ItemType File -Force
+   Add-Content $batchName -Value "setup.exe /configure configuration-x$arch.xml"
+   
+   # Download the Office Deployment Tool
+   $uri = 'https://github.com/bonben365/office365-installer/raw/main/setup.exe'
+   $null = Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
+   .\setup.exe /download "configuration-x$arch.xml"
+   
+   Write-Host
+   Write-Host ***************************************************************
+   Write-Host "Downloading $productName $($arch) bit...."                    *
+   Write-Host ***************************************************************
+   Write-Host
+   
+   }
    
    Do { 
    cls
-   Invoke-Command $MainMenu
-   $Select = Read-Host
-   Switch ($Select)
-      {
-         #1. Office 365 / Microsoft 365
-          1 {
-               $365SubMenu = {
-               Write-Host " *************************************************"
-               Write-Host " * Select a Microsoft Office 365 Product         *" 
-               Write-Host " *************************************************" 
-               Write-Host 
-               Write-Host " 1. Office 365 Home" 
-               Write-Host " 2. Office 365 Personal"
-               Write-Host " 3. Microsoft 365 Apps for Business" 
-               Write-Host " 4. Microsoft 365 Apps for Enterprise" 
-               Write-Host " 5. Go Back"
-               Write-Host 
-               Write-Host " Select an option and press Enter: "  -nonewline
-               } 
-               cls
-                        
+   Invoke-Command $Menu
+   $select = Read-Host
+   
+   if ($select -eq 1) {$arch = '64'}
+   if ($select -eq 2) {$arch = '86'}
+   
+   #Menu level 1 
+   Switch ($select)
+       { 
+       1 {
+            cls
+   
             Do { 
             cls
-            Invoke-Command $365SubMenu
-            $365SubSelect = Read-Host
+            Invoke-Command $Menu1
+            $select1 = Read-Host
    
-            if ($365SubSelect -eq 1) {$productId = 'O365HomePremRetail'}
-            if ($365SubSelect -eq 2) {$productId = 'O365HomePremRetail'}
-            if ($365SubSelect -eq 3) {$productId = 'O365BusinessRetail'}
-            if ($365SubSelect -eq 4) {$productId = 'O365ProPlusRetail'}
+            if ($select1 -eq 1) {$version = '2019'}
+            if ($select1 -eq 2) {$version = '2021'}
+            if ($select1 -eq 3) {$version = '365'}
    
-            $o365 = {
-               $null = New-Item -Path $env:temp\c2r -ItemType Directory -Force
-               Set-Location $env:temp\c2r
-               $fileName = 'configuration.xml'
-               New-Item $fileName -ItemType File -Force | Out-Null
-               Add-Content $fileName '<Configuration>'
-               Add-content $fileName '<Add OfficeClientEdition="64" Channel="Current">'
-               Add-content $fileName "<Product ID=`"$productId`">"
-               Add-content $fileName '<Language ID="en-us" />'
-               Add-Content $fileName -Value '</Product>'
-               Add-Content $fileName -Value '</Add>'
-               Add-Content $fileName -Value '</Configuration>'
-               Write-Host
-               Write-Host ============================================================
-               Write-Host "Installing $productId...."
-               Write-Host ============================================================
-               Write-Host
-
-               $uri = 'https://github.com/bonben365/office365-installer/raw/main/setup.exe'
-               Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue | Out-Null
-               .\setup.exe /configure .\configuration.xml
-               
-               # Cleanup
-               Set-Location "$env:temp"
-               Remove-Item $env:temp\c2r -Recurse -Force
-           }
-       
-           Switch ($365SubSelect)
-           {
-                1 { Invoke-Command $o365 }
-                2 { Invoke-Command $o365 }
-                3 { Invoke-Command $o365 }
-                4 { Invoke-Command $o365 }
-        
-            }
+            #Menu level 2
+            Switch ($select1)
+               {
+                  #Download Microsoft Office 2019
+                  1 {
+                     Do { 
+                     cls
+                     Invoke-Command $Menu2
+                     $select2 = Read-Host
+   
+                     if ($select2 -eq 1) {$productId = 'ProPlus2019Volume',$productName = 'Office 2019 Professional Plus'}
+                     if ($select2 -eq 2) {$productId = 'Standard2019Volume'}
+                     if ($select2 -eq 3) {$productId = 'ProPlus2019Volume'}
+                     if ($select2 -eq 4) {$productId = 'ProPlus2019Volume'}
+   
+                     Switch ($select2)
+                        {
+                        1 {Invoke-Command $install}
+                        2 {Invoke-Command $install}
+                        3 {Invoke-Command $install}
+                        4 {Invoke-Command $install}
+    
+                        }
+                     }
+   
+                     While ($select -ne 5)
+                  }
+   
+                  #Download Microsoft Office 2021
+                  2 {
+                     Do { 
+                     cls
+                     Invoke-Command $Menu2
+                     $select2 = Read-Host
+   
+                     if ($select2 -eq 1) {$productId = 'ProPlus2021Volume'}
+                     if ($select2 -eq 2) {$productId = 'Standard2021Volume'}
+   
+                     #Download Microsoft Office 2019
+                     Switch ($select2)
+                        {
+                        1 {Invoke-Command $install}
+                        2 {Invoke-Command $install}
+                        3 {Invoke-Command $install}
+                        4 {Invoke-Command $install}
+    
+                        }
+                     }
+                     
+                     While ($select -ne 3)
+                  }
+   
+   
                }
-            While ($365SubSelect -ne 5)
-            cls
-            }  
-      }
+            }
+   
+            While ($select1 -ne 4)
+   
+   
+   
+            }
+       2 {}
+       3 {}
+       }
    }
-   While ($Select -ne 3)
+   
+   While ($select -ne 3)
