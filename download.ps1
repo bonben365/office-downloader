@@ -204,7 +204,7 @@ $Menu = {
                            }
                         }
       
-                        While ($select -ne 13)
+                        While ($select2 -ne 13)
                         cls
                      }
       
@@ -246,7 +246,7 @@ $Menu = {
                            }
                         }
       
-                        While ($select -ne 13)
+                        While ($select2 -ne 13)
                         cls
                      }
       
@@ -270,7 +270,7 @@ $Menu = {
                            }
                         }
       
-                        While ($select -ne 4)
+                        While ($select2 -ne 4)
                      }
 
 
@@ -338,7 +338,7 @@ $Menu = {
                         }
                      }
 
-                     While ($select -ne 13)
+                     While ($select2 -ne 13)
                      cls
                   }
 
@@ -380,7 +380,7 @@ $Menu = {
                         }
                      }
 
-                     While ($select -ne 13)
+                     While ($select2 -ne 13)
                      cls
                   }
 
@@ -404,7 +404,7 @@ $Menu = {
                         }
                      }
 
-                     While ($select -ne 4)
+                     While ($select2 -ne 4)
                      cls
                   }
 
