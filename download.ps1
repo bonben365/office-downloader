@@ -94,7 +94,7 @@ $Menu = {
       
       # Download the Office Deployment Tool
       $uri = 'https://github.com/bonben365/office365-installer/raw/main/setup.exe'
-      $null = Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
+      Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
 
       Write-Host
       Write-Host *****************************************************************************
@@ -126,7 +126,7 @@ $Menu = {
       
       # Download the Office Deployment Tool
       $uri = 'https://github.com/bonben365/office365-installer/raw/main/setup.exe'
-      $null = Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
+      Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
    
       Write-Host
       Write-Host *****************************************************************************
