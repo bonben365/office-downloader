@@ -3,8 +3,8 @@ $Menu = {
    Write-Host " *                  Menu                   *" 
    Write-Host " *******************************************" 
    Write-Host 
-   Write-Host " 1. Download Office 64-bit" 
-   Write-Host " 2. Download Office 32-bit" 
+   Write-Host " 1. Download Microsoft Office 64-bit (For Windows 64bit only)" 
+   Write-Host " 2. Download Office 32-bit (For both Windows 32 and 64 bit)"
    Write-Host " 3. Quit"
    Write-Host 
    Write-Host " select an option and press Enter: "  -nonewline
@@ -16,9 +16,9 @@ $Menu = {
    Write-Host " *                  Menu                   *" 
    Write-Host " *******************************************" 
    Write-Host 
-   Write-Host " 1. Office 2019" 
-   Write-Host " 2. Office 2021" 
-   Write-Host " 2. Office 365" 
+   Write-Host " 1. Microsoft Office 2019" 
+   Write-Host " 2. Microsoft Office 2021" 
+   Write-Host " 2. Microsoft Office 365" 
    Write-Host " 3. Quit"
    Write-Host 
    Write-Host " select an option and press Enter: "  -nonewline
@@ -29,8 +29,8 @@ $Menu = {
    Write-Host " *                  Menu                   *" 
    Write-Host " *******************************************" 
    Write-Host 
-   Write-Host " 1. Office 2019 Professional Plus" 
-   Write-Host " 2. Office 2019 Standard" 
+   Write-Host " 1. Office $version Professional Plus" 
+   Write-Host " 2. Office $version Standard" 
    Write-Host " 3. Quit"
    Write-Host 
    Write-Host " select an option and press Enter: "  -nonewline
@@ -61,7 +61,7 @@ $Menu = {
 
    Write-Host
    Write-Host ***************************************************************
-   Write-Host "Downloading $productName $($arch) bit...."                    *
+   Write-Host "Downloading $productName $($arch) bit...."
    Write-Host ***************************************************************
    Write-Host
 
@@ -102,22 +102,18 @@ $Menu = {
                      Invoke-Command $Menu2
                      $select2 = Read-Host
    
-                     if ($select2 -eq 1) {$productId = 'ProPlus2019Volume';$productName = 'Office 2019 Professional Plus'}
-                     if ($select2 -eq 2) {$productId = 'Standard2019Volume'}
-                     if ($select2 -eq 3) {$productId = 'ProPlus2019Volume'}
-                     if ($select2 -eq 4) {$productId = 'ProPlus2019Volume'}
+                     if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus"}
+                     if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard"}
    
                      Switch ($select2)
                         {
                         1 {Invoke-Command $install}
                         2 {Invoke-Command $install}
-                        3 {Invoke-Command $install}
-                        4 {Invoke-Command $install}
     
                         }
                      }
    
-                     While ($select -ne 5)
+                     While ($select -ne 3)
                   }
    
                   #Download Microsoft Office 2021
@@ -127,20 +123,17 @@ $Menu = {
                      Invoke-Command $Menu2
                      $select2 = Read-Host
    
-                     if ($select2 -eq 1) {$productId = 'ProPlus2021Volume'}
-                     if ($select2 -eq 2) {$productId = 'Standard2021Volume'}
+                     if ($select2 -eq 1) {$productId = "ProPlus$($version)Volume";$productName = "Office $version Professional Plus LTSC"}
+                     if ($select2 -eq 2) {$productId = "Standard$($version)Volume";$productName = "Office $version Standard LTSC"}
    
-                     #Download Microsoft Office 2019
                      Switch ($select2)
                         {
                         1 {Invoke-Command $install}
                         2 {Invoke-Command $install}
-                        3 {Invoke-Command $install}
-                        4 {Invoke-Command $install}
     
                         }
                      }
-                     
+   
                      While ($select -ne 3)
                   }
    
