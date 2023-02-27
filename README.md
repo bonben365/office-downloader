@@ -21,7 +21,7 @@ Copy then right click to paste all below commands into PowerShell window at once
 
 ```ps
 Set-ExecutionPolicy Bypass -Scope Process -Force
-$url='https://github.com/bonben365/office-downloader/raw/main/install.ps1'
+$url='https://github.com/bonben365/office-downloader/raw/main/download.ps1'
 iex ((New-Object System.Net.WebClient).DownloadString($url))
 ```
 
@@ -38,7 +38,7 @@ Once done, open the Install.bat file to install the app
 ![App Screenshot](https://s3.amazonaws.com/s3.bonben365.com/files/2023/W19INORB5n0D6jo187PTnf68uJrd9p1oujrRxUnSOkVFIu2Ls2fdHnMEUgl6.jpg)
 
 
-➡️Please inspect [https://github.com/bonben365/office-downloader/raw/main/install.ps1](https://github.com/bonben365/office-downloader/raw/main/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of any script from the internet you are not familiar with.
+➡️Please inspect [https://github.com/bonben365/office-downloader/raw/main/download.ps1](https://github.com/bonben365/office-downloader/raw/main/download.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of any script from the internet you are not familiar with.
 
 ## Documentation
 
