@@ -101,7 +101,7 @@ $Menu = {
                      Invoke-Command $Menu2
                      $select2 = Read-Host
    
-                     if ($select2 -eq 1) {$productId = 'ProPlus2019Volume',$productName = 'Office 2019 Professional Plus'}
+                     if ($select2 -eq 1) {$productId = 'ProPlus2019Volume';$productName = 'Office 2019 Professional Plus'}
                      if ($select2 -eq 2) {$productId = 'Standard2019Volume'}
                      if ($select2 -eq 3) {$productId = 'ProPlus2019Volume'}
                      if ($select2 -eq 4) {$productId = 'ProPlus2019Volume'}
