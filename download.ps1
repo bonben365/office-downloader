@@ -75,8 +75,8 @@ $Menu = {
    
    
    $download = {
-      $null = New-Item -Path "~\Desktop\$productName" -ItemType Directory -Force
-      Set-Location "~\Desktop\$productName"
+      $null = New-Item -Path "$env:USERPROFILE\Desktop\$productName" -ItemType Directory -Force
+      Set-Location "$env:USERPROFILE\Desktop\$productName"
       $fileName = "configuration-x$arch.xml"
       $null = New-Item $fileName -ItemType File -Force
       Add-Content $fileName -Value '<Configuration>'
@@ -94,7 +94,7 @@ $Menu = {
       
       # Download the Office Deployment Tool
       $uri = 'https://github.com/bonben365/office365-installer/raw/main/setup.exe'
-      Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
+      (New-Object Net.WebClient).DownloadFile($uri, "$env:USERPROFILE\Desktop\$productName\setup.exe")
 
       Write-Host
       Write-Host *****************************************************************************
@@ -107,8 +107,8 @@ $Menu = {
    }
 
    $download365 = {
-      $null = New-Item -Path "~\Desktop\$productName" -ItemType Directory -Force
-      Set-Location "~\Desktop\$productName"
+      $null = New-Item -Path "$env:USERPROFILE\Desktop\$productName" -ItemType Directory -Force
+      Set-Location "$env:USERPROFILE\Desktop\$productName"
       $fileName = "configuration-x$arch.xml"
       $null = New-Item $fileName -ItemType File -Force
       Add-Content $fileName -Value '<Configuration>'
@@ -126,7 +126,7 @@ $Menu = {
       
       # Download the Office Deployment Tool
       $uri = 'https://github.com/bonben365/office365-installer/raw/main/setup.exe'
-      Invoke-WebRequest -Uri $uri -OutFile 'setup.exe' -ErrorAction:SilentlyContinue
+      (New-Object Net.WebClient).DownloadFile($uri, "$env:USERPROFILE\Desktop\$productName\setup.exe")
    
       Write-Host
       Write-Host *****************************************************************************
